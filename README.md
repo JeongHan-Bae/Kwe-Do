@@ -88,3 +88,7 @@ This package is distributed under the [MIT License](LICENSE)
 The name "Kwe Do" is a romanization of the sino-Korean word "궤도"(軌道), which translates to "orbit" in English. 
 This name was chosen to reflect the package's focus on analyzing permutation orbits, which are fundamental to shuffling algorithms. 
 The term "orbit" also evokes the concept of objects moving in a circular path, akin to how elements move within a shuffle pattern.
+
+<div align="center">
+  <img src="https://github.com/JeongHan-Bae/Kwe-Do/assets/128088756/72f4c19b-8371-480e-8cc4-8ab196fb5571" alt="kwe_do_ico">
+</div>
