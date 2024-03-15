@@ -13,6 +13,17 @@ Kwe_Do_Library
 │   ├── shuffle.cp310-win_amd64.pyd (compiled Cython file for shuffle submodule)
 │   └── shuffle.pyi (interface pyi file for shuffle submodule)
 │
+├── mac_build (folder for building in Mac system)
+│   ├── kwe_do (output folder for Mac system)
+│   │   ├── __init__.py
+│   │   ├── orbit.cpython-39-darwin.so (compiled Cython file for orbit submodule on Mac)
+│   │   ├── orbit.pyi (interface pyi file for orbit submodule)
+│   │   ├── shuffle.cpython-39-darwin.so (compiled Cython file for shuffle submodule on Mac)
+│   │   └── shuffle.pyi (interface pyi file for shuffle submodule)
+│   ├── wheel (folder containing the compiled wheel for Mac)
+│   │   └── kwe_do-1.0-py3-none-any.whl (for Mac)
+│   └── setup.py (wrapper for the library for Mac system)
+│
 ├── src (Cython source files)
 │   ├── orbit.pyx (Cython source file for orbit submodule)
 │   ├── shuffle.pyx (Cython source file for shuffle submodule) 
@@ -74,6 +85,20 @@ The package can be installed using the provided wheel file located in the `wheel
 pip install wheel/kwe_do-1.0-py3-none-any.whl
 
 ```
+For Mac users please download by
+
+```bash
+pip install mac_build/wheel/kwe_do-1.0-py3-none-any.whl
+
+```
+
+## Mac Build Construction
+
+The macOS version of Kwe_Do was constructed by [WaltonR1](https://github.com/waltonR1). WaltonR1 contributed to the development by setting up the necessary configurations and compiling the Cython files specifically for the macOS platform. The Mac build directory (`mac_build`) contains the compiled `.so` files and the wheel file (`kwe_do-1.0-py3-none-any.whl`) tailored for macOS systems.
+
+Walton's contributions ensured that users on macOS can seamlessly install and use the Kwe_Do package for their projects.
+
+
 
 ## Usage
 
