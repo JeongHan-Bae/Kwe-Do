@@ -9,33 +9,27 @@ Kwe_Do_Library
 ├── kwe_do (library folder for Windows)
 │   ├── __init__.py
 │   ├── orbit.cp310-win_amd64.pyd (compiled Cython file for orbit submodule)
+│   ├── orbit.cpython-39-darwin.so (compiled Cython file for orbit submodule on Mac)
 │   ├── orbit.pyi (interface pyi file for orbit submodule)
 │   ├── shuffle.cp310-win_amd64.pyd (compiled Cython file for shuffle submodule)
+│   ├── shuffle.cpython-39-darwin.so (compiled Cython file for shuffle submodule on Mac)
 │   └── shuffle.pyi (interface pyi file for shuffle submodule)
-│
-├── mac_build (folder for building in Mac system)
-│   ├── kwe_do (output folder for Mac system)
-│   │   ├── __init__.py
-│   │   ├── orbit.cpython-39-darwin.so (compiled Cython file for orbit submodule on Mac)
-│   │   ├── orbit.pyi (interface pyi file for orbit submodule)
-│   │   ├── shuffle.cpython-39-darwin.so (compiled Cython file for shuffle submodule on Mac)
-│   │   └── shuffle.pyi (interface pyi file for shuffle submodule)
-│   ├── wheel (folder containing the compiled wheel for Mac)
-│   │   └── kwe_do-1.0-py3-none-any.whl (for Mac)
-│   └── setup.py (wrapper for the library for Mac system)
 │
 ├── src (Cython source files)
 │   ├── orbit.pyx (Cython source file for orbit submodule)
 │   ├── shuffle.pyx (Cython source file for shuffle submodule) 
 │   └── setup.py (setup script to compile the Cython files; replace the pyd files in the kwe_do folder for Linux or macOS)
 │
-├── wheel (folder containing the compiled wheel for Windows)
-│   └── kwe_do-1.0-py3-none-any.whl (for Windows only)
+├── wheel (folder containing the compiled wheel)
+│   ├── mac (compiled wheel for Mac)
+│   │   └── kwe_do-1.0-py3-none-any.whl (for Mac only)
+│   └── win (compiled wheel for Windows)
+│       └── kwe_do-1.0-py3-none-win_amd64.whl (for Windows only)
 │
 ├── LICENSE
 ├── README.md
 ├── requirements.txt
-└── setup.py (wrapper for the library; ensure the pyd files are compiled according to your platform before compiling)
+└── setup.py (wrapper for the library; enables building for windows or mac)
 ```
 
 ## Program Structure
@@ -81,24 +75,25 @@ The package consists of two main modules:
 
 The package can be installed using the provided wheel file located in the `wheel` directory. Simply download the appropriate wheel file for your platform and install it using pip:
 
-```bash
-pip install wheel/kwe_do-1.0-py3-none-any.whl
+For Windows users, please download by:
 
+```bash
+pip install wheel/win/kwe_do-1.0-py3-none-win_amd64.whl
 ```
-For Mac users please download by
+
+For Mac users, please download by (this is using the old file, users can compile themselves):
 
 ```bash
-pip install mac_build/wheel/kwe_do-1.0-py3-none-any.whl
+pip install wheel/mac/kwe_do-1.0-py3-none-any.whl
 
 ```
 
 ## Mac Build Construction
 
-The macOS version of Kwe_Do was constructed by [WaltonR1](https://github.com/waltonR1). WaltonR1 contributed to the development by setting up the necessary configurations and compiling the Cython files specifically for the macOS platform. The Mac build directory (`mac_build`) contains the compiled `.so` files and the wheel file (`kwe_do-1.0-py3-none-any.whl`) tailored for macOS systems.
-
+The macOS version of Kwe_Do was constructed by [WaltonR1](https://github.com/waltonR1). 
+WaltonR1 contributed to the development by setting up the necessary configurations and compiling the Cython files specifically for the macOS platform. 
+The Mac build directory (`mac_build`) is now merged to the kwe_do folder to avoid repeating codes.
 Walton's contributions ensured that users on macOS can seamlessly install and use the Kwe_Do package for their projects.
-
-
 
 ## Usage
 
